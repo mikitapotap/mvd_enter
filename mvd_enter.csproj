@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pic\fb.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -102,10 +105,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="pic\pic_1.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="pic\fb.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pic\pic_1.png" />
+    <Resource Include="pic\pic_13.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

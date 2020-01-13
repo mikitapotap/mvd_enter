@@ -18,7 +18,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="0" VerticalAlignment="Top" Height="246" Grid.ColumnSpan="2" Margin="362,0,0,0">
-            <TextBlock Text="Доступ к справочной системе" VerticalAlignment="Center" FontFamily="Consolas" FontSize="27 px" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Right" Margin="0,110,10,0" Width="400"></TextBlock>
+            <TextBlock Text="Доступ к справочной системе" VerticalAlignment="Center" FontFamily="Consolas" FontSize="27 px" FontWeight="Bold" Foreground="#FFE4E2E2" HorizontalAlignment="Right" Margin="0,110,10,0" Width="400"></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Height="246">
@@ -28,12 +28,12 @@
         </StackPanel>
 
         <StackPanel VerticalAlignment="Top" Grid.Row="1" Margin="0,0,0,0" Height="95" Grid.ColumnSpan="2">
-            <TextBox x:Name="Login_reg" Height="38" Width="320" Margin="0,0,0,15" FontFamily="consolas" FontSize="20 px" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxHeight="38" MaxLength="50" MaxWidth="320" MinHeight="38" Text="polska_92" TextChanged="Login_reg_TextChanged"/>
+            <TextBox x:Name="Login_reg" Height="38" Width="320" Margin="0,0,0,15" FontFamily="consolas" FontSize="20 px" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxHeight="38" MaxLength="50" MaxWidth="320" MinHeight="38" TextChanged="Login_reg_TextChanged"></TextBox>
             <PasswordBox x:Name="Pass_reg" PasswordChar="*" Height="38" Width="320" Margin="236,0" FontFamily="consolas" FontSize="20 px" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxHeight="38" MaxLength="50" MaxWidth="320" MinHeight="38"/>
         </StackPanel>
 
         <Button x:Name="Button_enter" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="200" FontFamily="consolas" FontWeight="Bold" FontSize="20 px" Margin="0 40 0 0" Click="Button_enter_Click">ВОЙТИ</Button>
-        <Label x:Name="Label_info" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="30 px" FontFamily="consolas" FontWeight="Bold" Padding="0 0 0 20" VerticalAlignment="Bottom" HorizontalAlignment="Center" ></Label>
+        <Label x:Name="Label_info" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="30 px" FontFamily="consolas" FontWeight="Bold" Padding="0 0 0 20" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
         <Label x:Name="Label_info_time" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" FontSize="12 px" FontFamily="consolas" FontWeight="Bold" Padding="0 0 0 0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="White"></Label>
 
         <Grid.ColumnDefinitions>
