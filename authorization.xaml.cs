@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,7 @@ namespace mvd_enter
             _timer = new DispatcherTimer();
         }
 
+        public static string logPath = @"C:\Users\MICROSOFT\source\repos\mikitapotap\mikitapotap\mvd_enter\log_info.txt";
         private void OnTimerTick(object sender, object e)
         {
             //Label_info.Content = _initState;
@@ -64,6 +66,21 @@ namespace mvd_enter
             };
             timer.Tick += (o, t) => { Label_info_time.Content = DateTime.Now.ToString("U"); };
             timer.Start();
+
+            try
+            {
+                string message = "Открытие приложения.";
+                string logText = string.Format("{0}\t{1}", DateTime.Now, message);
+                using (StreamWriter sw = new StreamWriter(logPath, true))
+                {
+                    sw.WriteLine(logText);
+                    sw.Close();
+                }
+            }
+            catch (Exception ttt)
+            {
+                MessageBox.Show(ttt.Message);
+            }
         }
 
         private void Button_enter_Click(object sender, RoutedEventArgs e)
@@ -82,6 +99,15 @@ namespace mvd_enter
                     _timer.Interval = TimeSpan.FromSeconds(1);
                     _timer.Tick += OnTimerTick;
                     _timer.Start();
+
+                    string message = "[процесс]: Авторизация...";
+                    string message_sms = $"[процесс]: Успешна. {Login_reg.Text}";
+                    string logText = string.Format("{0}\t{1} {2}", DateTime.Now, message, message_sms);
+                    using (StreamWriter sw = new StreamWriter(logPath, true))
+                    {
+                        sw.WriteLine(logText);
+                        sw.Close();
+                    }
                 }
                 else
                 {
@@ -100,6 +126,15 @@ namespace mvd_enter
                     Pass_reg.Clear();
 
                     Button_enter.Content = "ВОЙТИ";
+
+                    string message = "[процесс]: Авторизация...";
+                    string message_sms = $"[процесс]: Неуспешна. {Login_reg}";
+                    string logText = string.Format("{0}\t{1}{2}", DateTime.Now, message, message_sms);
+                    using (StreamWriter sw = new StreamWriter(logPath, true))
+                    {
+                        sw.WriteLine(logText);
+                        sw.Close();
+                    }
                 }
 
                 if (error == 3)
@@ -118,6 +153,15 @@ namespace mvd_enter
                         Pass_reg.IsEnabled = false;
                         Login_reg.IsEnabled = false;
                         Button_enter.IsEnabled = false;
+
+                        string message_1 = "[процесс]: Авторизация...";
+                        string message_sms = $"[процесс]: Неуспешна. {Login_reg}";
+                        string logText = string.Format("{0}\t{1}{2}", DateTime.Now, message_1, message_sms);
+                        using (StreamWriter sw = new StreamWriter(logPath, true))
+                        {
+                            sw.WriteLine(logText);
+                            sw.Close();
+                        }
                     }
                 }
             }
